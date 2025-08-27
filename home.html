@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+</head>
+<body class="bg-[#f4f5f7] min-h-screen">
+    <div class="bg-white mt-10 rounded-b-2xl">
+        <nav class=" mx-9 mb-3 flex justify-between items-center ">
+        <div class="flex items-center">
+            <img src="./assets/Group.png" alt="" class="h-7 w-7 mr-3">
+            <div>
+                <h1 class="font-bold text-sm">$45000</h1>
+                <p class="text-gray-500 text-sm">Available Balance</p>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn text-xs">
+                <i class="fa-solid fa-right-from-bracket inline-block rotate-180 mr-2"></i>Log out
+            </button>
+        </div>
+    </nav>
+    <hr class="text-gray-200">
+
+
+    <!-- welcome -->
+     <div class="mx-9 mt-5">
+        <h1 class="font-bold text-2xl mb-2">🔥 Welcome to Payooo!</h1>
+        <p class="text-sm text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+     </div>
+
+    <!-- card -->
+     <div class="grid grid-cols-3 grid-rows-2 gap-x-2 gap-y-3 mx-9 mt-5 pb-5">
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+        <div class=" flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20">
+            <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
+            <p>Add Money</p>
+        </div>
+     </div>
+    </div>
+
+    <div class="mt-10 pb-10">
+        <p class="font-bold text-sm mb-3 mx-9">Add Money</p>
+        <form action="" class="bg-white mx-9 p-10 rounded-lg flex flex-col gap-5">
+
+            <div class="flex flex-col gap-y-2 font-semibold">
+                <label for="bankName">Select a Bank</label>
+                <select class="select rounded-lg bg-[#f4f5f7] w-full">
+                    <option disabled selected>Select Bank</option>
+                    <option>Sonali Bank</option>
+                    <option>Dutch Bangla Bank</option>
+                    <option>Islami Bank</option>
+                    <option>Pubali Bank</option>
+                    <option>Ific Bank</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-y-2 font-semibold">
+                <label for="accountNumber">Bank account number</label>
+                <input type="number" id="accountNumber"  placeholder="Enter your account number" class=" w-full input rounded-lg bg-[#f4f5f7]" />
+            </div>
+            <div class="flex flex-col gap-y-2 font-semibold">
+                <label for="amount">Amount to add</label>
+                <input type="number" id="amount"  placeholder="Enter your amount" class=" w-full input rounded-lg bg-[#f4f5f7]" />
+            </div>
+            <div class="flex flex-col gap-y-2 font-semibold">
+                <label for="pin">4 digit pin</label>
+                <input type="password" id="pin"  placeholder="Enter your pin" class=" w-full input rounded-lg bg-[#f4f5f7]" />
+            </div>
+
+            <button id="loginButton" class="btn btn-primary rounded-lg">Login</button>
+        </form>
+    </div>
+</body>
+</html>

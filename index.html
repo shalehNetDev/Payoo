@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
+    <div class=" h-32 w-80 bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+        <img src="./assets/Group.png" alt="">
+    </div>
+    <form action="" class="bg-white p-10 w-96 rounded-lg shadow-lg flex flex-col gap-5">
+        <div class="flex flex-col gap-y-2 font-semibold">
+            <label for="inputMobileNumber">Mobile Number</label>
+            <input type="text" id="inputMobileNumber" placeholder="Type here" class="input rounded-lg bg-[#f4f5f7]" />
+        </div>
+        <div class="flex flex-col gap-y-2 font-semibold">
+            <label for="pin">4 digit pin</label>
+            <input type="password" id="pin"  placeholder="Enter your pin" class="input rounded-lg bg-[#f4f5f7]" />
+        </div>
+
+        <button id="loginButton" class="btn btn-primary rounded-lg">Login</button>
+    </form>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function(e){
+            console.log('Login button clicked');
+            e.preventDefault();
+            let mobileNumber = +8801736198805;
+            let pinNumber = 1234;
+
+            let userMobileNumber = document.getElementById('inputMobileNumber').value;
+            let userMobileNumberConverted = parseInt(userMobileNumber);
+            let userPinNumber = document.getElementById('pin').value;
+            let userPinNumberConverted = parseInt(userPinNumber);
+
+            if(userMobileNumberConverted === mobileNumber && userPinNumberConverted === pinNumber){
+                window.location.href = "home.html";
+            }
+            else{
+                alert('Invalid mobile number or pin');
+            }
+        })
+    </script>
+</body>
+</html>
