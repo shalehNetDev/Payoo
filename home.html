@@ -38,11 +38,11 @@
 
         <!-- card -->
         <div class="grid grid-cols-3 grid-rows-2 gap-x-2 gap-y-3 mx-9 mt-5 pb-5">
-            <div id="addMoneyCard" class="cursor-pointer flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20 p-1 text-sm">
+            <div id="addMoneyCard" class="formBtn cursor-pointer flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20 p-1 text-sm">
                 <img src="./assets/wallet1.png" alt="" class="h-7 w-7">
                 <p>Add Money</p>
             </div>
-            <div id="cashOutcard" class="cursor-pointer flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20 p-1 text-sm">
+            <div id="cashOutcard" class="formBtn cursor-pointer flex flex-col justify-center items-center border border-gray-200 rounded-lg w-28 h-20 p-1 text-sm">
                 <img src="./assets/send1.png" alt="" class="h-7 w-7">
                 <p>Cashout</p>
             </div>
@@ -66,7 +66,7 @@
     </div>
 
     <!--add money form -->
-    <div id="addMoneyForm" class="mt-10 pb-10">
+    <div id="addMoneyForm" class="form mt-10 pb-10">
         <p class="font-bold text-sm mb-3 mx-9">Add Money</p>
         <form action="" class="bg-white mx-9 p-10 rounded-lg flex flex-col gap-5">
 
@@ -100,7 +100,7 @@
 
 
     <!-- Cashout form -->
-    <div id="CashoutForm" class="mt-10 pb-10">
+    <div id="CashoutForm" class="form mt-10 pb-10">
         <p class="font-bold text-sm mb-3 mx-9">Cash out</p>
         <form action="" class="bg-white mx-9 p-10 rounded-lg flex flex-col gap-5">
 
@@ -154,6 +154,22 @@
             return value;
         }
 
+        function toggleEvent(id){
+            let forms = document.getElementsByClassName('form');
+            for(let form of forms){
+                form.style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+        }
+        // toggleColor
+        function toggleColor(id){
+            let btns = document.getElementsByClassName('formBtn');
+           for (let btn of btns){
+            btn.classList.remove("bg-blue-100");
+           }
+           document.getElementById(id).classList.add("bg-blue-100");
+        }
+
 
         // add money form submit
         document.getElementById('formButton').addEventListener('click', function(event){
@@ -197,14 +213,19 @@
 
         // ToggleEvent add money and cashout form
         document.getElementById('addMoneyCard').addEventListener('click', function(e){
-            document.getElementById('addMoneyForm').style.display = 'block';
-            document.getElementById('CashoutForm').style.display = 'none';
+           toggleEvent('addMoneyForm');
+           toggleColor('addMoneyCard');
+           
         })
 
         document.getElementById('cashOutcard').addEventListener('click', function(e){
-            document.getElementById('CashoutForm').style.display = 'block';
-            document.getElementById('addMoneyForm').style.display = 'none';
+            toggleEvent('CashoutForm');
+            toggleColor('cashOutcard');
+            
         })
+
+        // toggle background color
+        
 
         // cashout form submit
         document.getElementById('withdrawButton').addEventListener('click', function(e){
