@@ -133,16 +133,38 @@
         document.getElementById('addMoneyForm').style.display = 'none';
         document.getElementById('CashoutForm').style.display = 'none';
 
+        // re-usable code
+        function getParseID(id){
+            let parseID = parseInt(document.getElementById(id).value);
+            return parseID;
+        }
+
+        function getInput(id){
+            let inputValue = document.getElementById(id).value;
+            return inputValue;
+        }
+
+        function getInnerText(id){
+            let innerTextValue = parseInt(document.getElementById(id).innerText);
+            return innerTextValue;
+        }
+
+        function setInnerTextValue(value){
+            document.getElementById('availableBalance').innerText = value;
+            return value;
+        }
+
+
         // add money form submit
         document.getElementById('formButton').addEventListener('click', function(event){
             event.preventDefault();
             let userPinNumber = 1234;
-            let bankOption = document.getElementById('selectBank').value;
-            let bankAccountNumber = document.getElementById('accountNumber').value;
-            let addAmount = parseInt(document.getElementById('amount').value);
-            let accountPin = parseInt(document.getElementById('pin').value);
+            let bankOption = getInput('selectBank');
+            let bankAccountNumber = getInput('accountNumber');
+            let addAmount = getParseID('amount');
+            let accountPin = getParseID('pin');
 
-            let Balance = parseInt(document.getElementById('availableBalance').innerText);
+            let Balance = getInnerText('availableBalance');
 
             if(bankOption === 'Select Bank'){
                 alert('Please select a bank');
@@ -163,7 +185,7 @@
 
 
             let newBalance = Balance + addAmount;
-            document.getElementById('availableBalance').innerText = newBalance;
+            setInnerTextValue(newBalance);
 
             alert('Money added successfully');
             document.getElementById('selectBank').value = 'Select Bank';
@@ -188,11 +210,11 @@
         document.getElementById('withdrawButton').addEventListener('click', function(e){
             e.preventDefault();
             let userPinNumber = 1234;
-            let AgentAccountNumber = document.getElementById('agentAccountNumber').value;
-            let WithdrawAmount = parseInt(document.getElementById('withdrawAmount').value);
-            let PinForWithdraw = parseInt(document.getElementById('pinForWithdraw').value);
+            let AgentAccountNumber = getInput('agentAccountNumber');
+            let WithdrawAmount = getParseID('withdrawAmount');
+            let PinForWithdraw = getParseID('pinForWithdraw');
 
-            let Balance = parseInt(document.getElementById('availableBalance').innerText);
+            let Balance = getInnerText('availableBalance');
             let newBalance = Balance - WithdrawAmount;
 
             if(AgentAccountNumber.length !== 11){
@@ -207,7 +229,7 @@
                 alert('please enter a valid pin');
                 return;
             }
-            document.getElementById('availableBalance').innerText = newBalance;
+            setInnerTextValue(newBalance);
             alert('Money withdrawn successfully');
             document.getElementById('agentAccountNumber').value = '';
             document.getElementById('withdrawAmount').value = '';
